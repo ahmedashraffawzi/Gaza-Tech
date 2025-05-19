@@ -1,0 +1,54 @@
+/*currnet page*/
+
+.top-nav li a {
+    color: var(--sec-color) !important;
+}
+
+.top-nav li:nth-child(5) a {
+    color: var(--main-color) !important;
+}
+
+.current-page {
+    width: 85px;
+    height: 200px;
+    background-color: var(--sec-color);
+    display: inline-block;
+    position: absolute;
+    margin-left: 360px;
+    margin-top: -165px;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+/* body ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>body*/
+
+.h {
+    background-color: var(--main-color);
+    color: var(--sec-color);
+    padding: 0 0.5rem;
+    margin: 0
+}
+
+hr {
+    margin: 0;
+}
+
+.login-inputs input {
+    margin-bottom: 1rem;
+    width: 300px !important
+}
+@media (max-width: 400px){
+    .login-inputs input {
+        margin-bottom: 1rem;
+        width: 220px !important
+    }
+
+}
+
+.b {
+    padding: 0.4rem 0.8rem;
+    color: var(--sec-color);
+    background-color: var(--main-color);
+    border: 0;
+    border-radius: 5px;
+}

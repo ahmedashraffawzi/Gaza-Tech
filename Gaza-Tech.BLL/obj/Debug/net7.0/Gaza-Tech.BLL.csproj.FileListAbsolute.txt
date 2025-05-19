@@ -1,0 +1,17 @@
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\bin\Debug\net7.0\Gaza-Tech.BLL.deps.json
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\bin\Debug\net7.0\Gaza-Tech.BLL.runtimeconfig.json
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\bin\Debug\net7.0\Gaza-Tech.BLL.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\bin\Debug\net7.0\Gaza-Tech.BLL.pdb
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\bin\Debug\net7.0\Gaza-Tech.DataAccess.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\bin\Debug\net7.0\Gaza-Tech.DataAccess.pdb
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.csproj.AssemblyReference.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.AssemblyInfoInputs.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.AssemblyInfo.cs
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.csproj.CoreCompileInputs.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\refint\Gaza-Tech.BLL.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.pdb
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tech.BLL.genruntimeconfig.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\ref\Gaza-Tech.BLL.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.BLL\obj\Debug\net7.0\Gaza-Tec.0634270B.Up2Date

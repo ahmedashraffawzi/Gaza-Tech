@@ -1,0 +1,103 @@
+﻿@model IPagedList<Product>
+<br /><br />
+<form method="get" class="mb-3 mt-5">
+	<div class="row justify-content-center align-items-center">
+		<!-- حقل البحث -->
+		<div class="col-md-3">
+			<input type="text" name="searchString" class="form-control" placeholder="Enter Your Item..." value="@Context.Request.Query["searchString"]">
+		</div>
+
+		<!-- زر البحث -->
+		<div class="col-md-2">
+			<button type="submit" class="btn btn-primary">Search</button>
+		</div>
+
+		<!-- فلتر الكاتيجوري -->
+		<div class="col-md-2 mt-3">
+			
+			<select name="categoryId" id="categoryFilter" class="form-select">
+				<option value="0">All Categories</option>
+				@foreach (var category in ViewBag.Categories)
+				{
+					<option value="@category.Id" selected="@(Context.Request.Query["categoryId"] == category.Id.ToString())">@category.Name</option>
+				}
+			</select>
+		</div>
+
+		<!-- فلتر البراند -->
+		<div class="col-md-2 mt-3">
+			
+			<select name="brand" id="brandFilter" class="form-select">
+				<option value="">All Brands</option>
+				<option value="Apple" selected="@(Context.Request.Query["brand"] == "Apple")">Apple</option>
+				<option value="Dell" selected="@(Context.Request.Query["brand"] == "Dell")">Dell</option>
+				<option value="Hp" selected="@(Context.Request.Query["brand"] == "Hp")">Hp</option>
+				<option value="Acer" selected="@(Context.Request.Query["brand"] == "Acer")">Acer</option>
+				<option value="ASUS" selected="@(Context.Request.Query["brand"] == "ASUS")">ASUS</option>
+				<option value="lenovo" selected="@(Context.Request.Query["brand"] == "lenovo")">lenovo</option>
+				<option value="Huawei" selected="@(Context.Request.Query["brand"] == "Huawei")">Huawei</option>
+				<option value="Samsung" selected="@(Context.Request.Query["brand"] == "Samsung")">Samsung</option>
+				<option value="Xiaomi" selected="@(Context.Request.Query["brand"] == "Xiaomi")">Xiaomi</option>
+				<option value="realme" selected="@(Context.Request.Query["brand"] == "realme")">realme</option>
+				<option value="Oppo" selected="@(Context.Request.Query["brand"] == "Oppo")">Oppo</option>
+			</select>
+		</div>
+
+		<!-- زر الفلتر -->
+		<div class="col-md-2 mt-3">
+		
+			<button type="submit" class="btn btn-primary">Filter</button>
+		</div>
+	</div>
+</form>
+
+<section class="py-5">
+	<div class="container px-4 px-lg-5 mt-5">
+		<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+			@foreach (var product in Model)
+			{
+				<div class="col-12 col-sm-6 col-lg-4 mb-5">
+					<div class="card h-100">
+						<!-- Product image-->
+						<div style="flex-grow:3" class="d-flex justify-content-center align-items-center">
+							<a asp-action="Details" asp-route-id="@product.Id">
+								<img class="card-img-top" style="max-height:250px" src="~/@product.Image" alt="ProductImage" />
+							</a>
+						</div>
+						<!-- Product details-->
+						<div class="card-body p-4 d-flex justify-content-center align-items-center">
+							<div class="text-center">
+								<!-- Product name-->
+								<h5 class="fw-bolder">@product.Name</h5>
+								<!-- Product price-->
+								$@product.Price
+							</div>
+						</div>
+						<!-- Product actions-->
+						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+							<div class="text-center">
+								<a class="btn btn-outline-dark mt-auto"asp-controller="Shopping" asp-action="Details" asp-route-id="@product.Id">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+
+		<div class="d-flex justify-content-center">
+
+			@Html.PagedListPager(Model, page => Url.Action("Index", new { page = page,searchString = Context.Request.Query["searchString"],brand = Context.Request.Query["brand"],categoryId = Context.Request.Query["categoryId"]   }),
+			new PagedListRenderOptions
+			{
+			LiElementClasses = new string[] { "page-item" },
+			PageClasses = new string[] { "page-link" },
+			// LinkToFirstPageFormat = "Next",
+			LinkToPreviousPageFormat = "<< Previous",
+			LinkToNextPageFormat = "Next >",
+			// LinkToLastPageFormat = "<< Previous"
+			})
+		</div>
+	</div>
+</section>

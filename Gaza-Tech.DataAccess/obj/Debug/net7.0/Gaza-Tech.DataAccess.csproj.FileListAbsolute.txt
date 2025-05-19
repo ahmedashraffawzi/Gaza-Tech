@@ -1,0 +1,14 @@
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\bin\Debug\net7.0\Gaza-Tech.DataAccess.deps.json
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\bin\Debug\net7.0\Gaza-Tech.DataAccess.runtimeconfig.json
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\bin\Debug\net7.0\Gaza-Tech.DataAccess.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\bin\Debug\net7.0\Gaza-Tech.DataAccess.pdb
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.csproj.AssemblyReference.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.AssemblyInfoInputs.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.AssemblyInfo.cs
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.csproj.CoreCompileInputs.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\refint\Gaza-Tech.DataAccess.dll
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.pdb
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\Gaza-Tech.DataAccess.genruntimeconfig.cache
+E:\Back End\Graduation Project\Gaza-Tech\Gaza-Tech.DataAccess\obj\Debug\net7.0\ref\Gaza-Tech.DataAccess.dll

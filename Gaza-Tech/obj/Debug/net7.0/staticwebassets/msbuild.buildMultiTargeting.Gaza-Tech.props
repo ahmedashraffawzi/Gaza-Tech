@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Gaza-Tech.props" />
+</Project>

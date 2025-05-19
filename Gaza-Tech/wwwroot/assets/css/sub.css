@@ -1,0 +1,229 @@
+
+/*currnet page*/
+.top-nav li a {
+    color: var(--sec-color) !important;
+}
+
+.top-nav li:nth-child(4) a {
+    color: var(--main-color) !important;
+}
+
+.current-page {
+    width: 93px;
+    height: 200px;
+    background-color: var(--sec-color);
+    display: inline-block;
+    position: absolute;
+    margin-left: 245px;
+    margin-top: -165px;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+/* Shop Content */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.shop-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    gap: 1rem;
+}
+
+#product-list {
+    justify-content: center;
+}
+
+.product-box {
+    max-width: 290px;
+    transition: var(--transition2);
+    overflow: hidden;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.product-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: var(--transition2);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 450px) {
+
+    .product-box {
+        max-width: 250px;
+    }
+
+    .product-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.product-box:hover {
+    border: 1px solid var(--forth-color);
+    transition: var(--transition2);
+}
+
+.product-box:hover .product-img {
+    transform: scale(105%);
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.product-box h2,
+.product-box span,
+.product-box p{
+    margin-left: 0.5rem 
+}
+
+.price {
+    font-weight: 500;
+}
+
+.add-cart {
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--forth-color);
+    color: var(--sec-color);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-cart:hover {
+    background: var(--main-color);
+    transition: var(--transition2);
+}
+/* filter ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>filter*/
+
+.filter {
+    position: fixed;
+    top: 0;
+    right: -175%;
+    width: 250px;
+    min-height: 100vh;
+    padding: 1rem;
+    background: var(--sec-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% /10%);
+    transition: all 0.3s;
+    z-index: 205;
+}
+
+.filter.active {
+    right: 0;
+}
+
+
+@media (max-width: 768px) {
+    .filter {
+        width: 200px;
+    }
+
+    #close-f {
+        right: 5px !important;
+    }
+}
+.filter-title {
+    text-align: start;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+#close-f {
+    position: absolute;
+    top: 0.8rem;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--forth-color);
+    cursor: pointer;
+}
+
+
+/*filter*/
+.h {
+    min-width: 10rem;
+    background-color: var(--main-color);
+    color: var(--sec-color);
+    padding: 0 0.5rem;
+    margin: 0
+}
+
+
+.b {
+    padding: 0.4rem 0.8rem;
+    color: var(--sec-color);
+    background-color: var(--main-color);
+    border: 0;
+    border-radius: 5px;
+}
+
+.catogery-list {
+    cursor: pointer;
+}
+
+    .catogery-list:hover {
+        color: var(--main-color);
+    }
+
+.catogery-list-active {
+    color: var(--main-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.brand {
+    width: 230px;
+    padding: .5rem 0;
+}
+
+
+li i.bx.bxs-right-arrow {
+    font-size: 12px;
+}
+
+.list-group li {
+    min-width: 11rem;
+    padding: 0.3rem 0.5rem;
+}
+
+/* filter buttons */
+
+.filter-button-group button {
+    transition: var(--transition1);
+    transition: var(--transition1);
+    background-color: var(--third-color);
+    border: none;
+    margin-top: 5px;
+}
+
+    .filter-button-group button:hover {
+        background-color: var(--main-color);
+        color: var(--third-color);
+    }
+
+    .filter-button-group button:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+@media (max-width: 768px) {
+    .filter-button-group button {
+        font-size: 0.8rem;
+    }
+}

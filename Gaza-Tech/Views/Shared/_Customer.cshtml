@@ -1,0 +1,253 @@
+﻿@using Gaza_Tech.Utilities;
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor httpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gaza-Tech</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/customer/css/styles.css" rel="stylesheet" />
+    <!-- <link href="~/customer/css/carousel.css" rel="stylesheet" />-->
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    
+    <!-- تضمين مكتبة Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-brand bg-primary fixed-top">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand custom-brand" style="width:250px" href="#!">Gaza-Tech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbar-supportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="logo"><a class="nav-link active" style="width:100px" aria-current="page" href="/Customer/Home/Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" style="width:150px" aria-current="page" href="/Customer/Shopping/Index">Shopping</a></li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole(UsersRoles.AdminRole))
+                        {
+                            <li class="nav-item"><a class="nav-link active" href="/Admin/Dashboard/Index">Dashboard</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"  id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Setting</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item"   href="/Identity/Account/Manage">Edit Profile</a></li>
+                                </ul>
+                            </li>
+                        }
+                    }
+                </ul>
+                <partial name="_LoginPartial" />
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form class="d-flex">
+                        <a href="/customer/Cart/Index" class="btn btn-outline-dark">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            @await Component.InvokeAsync("Cart")
+                        </a>
+                    </form>
+                }
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Section -->
+    @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" &&
+    ViewContext.RouteData.Values["Action"]?.ToString() == "Index")
+    {
+        <section class="landing text-center justify-content-lg-center">
+            <h1 class="text-white">Gaza-Tech</h1>
+            <h6 class="text-white element"></h6>
+            <a href="/Customer/Shopping/Index">
+                <button type="button" class="btn btn-outline-warning m-3" style="border-radius: 25px; transition: all 0.5s;">
+                    Start Shopping Now
+                </button>
+            </a>
+        </section>
+    }
+    
+    @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" &&
+    ViewContext.RouteData.Values["Action"]?.ToString() == "Index")
+    {
+        <section class="carousel-sections">
+            <div id="imgs" class="carousel slide" data-bs-ride="carousel">
+                <div class="overlay"></div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/assets/imgs/6.jpg" class="d-block w-60" alt="Header Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+    <!--Chatbot Function-->
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "s7_BwWcCRjpnoIWKp23ps"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
+    <!-- Section-->
+    @RenderBody()
+
+    <!--Brands Section-->
+    @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" &&
+    ViewContext.RouteData.Values["Action"]?.ToString() == "Index")
+    {
+        <section id="brands" class="border-top footer text-muted mt-4 danger">
+            <div class="border-top footer text-muted mt-4 blue">
+                <h1 class="d-flex flex-row justify-content-center">Some Brands in Gaza-Tech</h1><br />
+            </div>
+            <div class="container">
+                <div class="row g-1">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="icon-box">
+                            <a asp-controller="Shopping" asp-action="Index">
+                                <img src="https://img.icons8.com/color/48/000000/hp.png" />
+                                <h3 class="d-inline">Hp</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <a asp-controller="Shopping" asp-action="Index">
+                                <img src="https://img.icons8.com/color/48/000000/dell--v1.png" />
+                                <h3 class="d-inline">Dell</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <a asp-controller="Shopping" asp-action="Index">
+                                <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-huawei-technologies-company-a-chinese-multinational-technology-provides-telecommunications-equipment-and-consumer-electronics-logo-color-tal-revivo.png" />
+                                <h3 class="d-inline">Huawei</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <a asp-controller="Shopping" asp-action="Index">
+                                <img src="https://img.icons8.com/fluency-systems-filled/48/000000/mac-os.png" />
+                                <h3 class="d-inline">Apple</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <a asp-controller="Shopping" asp-action="Index">
+                                <i class="ri-database-2-line" style="color: #47aeff;"></i>
+                                <img src="~/assets/imgs/OPPO_Logo_wiki.png" alt="Oppo logo" width="48" />
+                                <h3 class="d-inline">Oppo</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <a asp-controller="Shopping" asp-action="Index">
+                                <img src="https://img.icons8.com/color/50/000000/xiaomi.png" alt="" />
+                                <h3 class="d-inline">Xiaomi</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <a asp-controller="Shopping" asp-action="Index">
+                                <img src="https://logowik.com/content/uploads/images/181_acer.jpg" alt="" width="66" />
+                                <h3 class="d-inline">Acer</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <a asp-controller="Product" asp-action="GetAll">
+                                <img src="https://img.icons8.com/color/48/000000/samsung.png" alt="" />
+                                <h3 class="d-inline">Samsung</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+    <!-- footer -->
+    <footer id="footer" class="border-top footer text-muted mt-4 danger bg-gradient mt-5">
+        <div class="footer-top">
+            <div class="container">
+                <div class="d-flex flex-row justify-content-sm-around justify-content-md-evenly footer-sections">
+                    <div class="inner-footer">
+                        <div class="container text-wrap d-md-flex pt-3 pb-3">
+                            <div class=" text-center text-md-start">
+                                <div class="copyright">
+                                    &copy; Copyright <strong>
+                                        <span>
+                                            Gaza-Tech
+                                        </span>
+                                    </strong>. All Rights Reserved
+                                </div>
+                                <div class="credits">
+                                    Designed by <a href="https://github.com/ahmedashraffawzi" target="_blank">
+                                        Dev-Ahmed
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>MY Account</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Identity/Account/Login">Sign In</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Identity/Account/Register">Sign Up</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact text-wrap">
+                        <h3>Gaza-Tech</h3>
+                        <p>
+                            <strong>Phone:</strong> +20 1013893864<br>
+                            <strong>Email:</strong> dev.ahmedashraf1@gmail.com<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+   
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/customer/js/scripts.js"></script>
+    <!--تهيئة Typed.js-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var options = {
+                strings: ['Any Tech you need', 'Any Laptops', 'Any Mobile phones', 'Any Accessories', 'Any Tablets'],
+                typeSpeed: 100,
+                loop: true,
+                loopCount: Infinity,
+                showCursor: false,
+                backSpeed: 100
+            };
+            var typed = new Typed('.element', options);
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+  
+</body>
+</html>

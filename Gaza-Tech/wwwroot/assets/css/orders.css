@@ -1,0 +1,37 @@
+﻿
+
+@media (max-width: 768px){
+    table th,
+    table td,
+    table li {
+        font-size: 0.8rem !important;
+
+    }
+}
+
+@media (max-width: 650px){
+    table th,
+    table td,
+    table li {
+        font-size: 0.7rem !important;
+
+    }
+}
+
+@media (max-width: 550px){
+    table th,
+    table td,
+    table li {
+        font-size: 0.6rem !important;
+        padding: 0 !important;
+    }
+
+    ul {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .alert{
+        display: none !important;
+    }
+}
